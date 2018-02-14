@@ -6,7 +6,7 @@
   "scripts": {
     "start": "gulp serve",
     "build": "gulp",
-    "postinstall": "rm -f ./build && npm run build && npm run start",
+    "postinstall": "rm -f ./build && npm run build",
     "deploy": "./deploy.sh"
   },
   "repository": {
