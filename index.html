@@ -1,0 +1,808 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+    <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+    <link href="stylesheets/highlight-monokai.css" rel="stylesheet" type="text/css" media="screen, print" />
+    <script src="javascripts/all.js" type="text/javascript"></script>
+  </head>
+  <body class="" data-languages="[&#34;bash&#34;]">
+    <a href="#" id="nav-button">
+      <span> NAV
+        <img alt="undefined" class="undefined" src="images/navbar.png"> </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img alt="undefined" class="undefined" src="images/logo.png">
+      <div class="lang-selector">
+        <a href="#" data-language-name="bash">bash</a>
+      </div>
+      <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search"> </div>
+      <ul class="search-results"></ul>
+      <div id="toc"> </div>
+      <ul class="toc-footer">
+        <li>
+          <a href='#'>Sign Up for a Developer Key</a>
+        </li>
+        <li>
+          <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
+        </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="introduction">Introduction</h1>
+        <p>Welcome to the WMS API! You can use our API to access WMS API endpoints, which can get information on various <code>products</code>, <code>vendors</code>, <code>users</code>, <code>request_orders</code>, <code>purchase_orders</code>, etc in our
+          database. </p>
+        <!-- We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right. -->
+        <!-- This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation. -->
+        <h1 id="authentication">Authentication</h1>
+        <blockquote>
+          <p>To authorize, use this code:</p>
+        </blockquote> <pre class="highlight bash"><code><span class="hljs-comment"># With shell, you can just pass the correct header with each request</span>
+curl <span class="hljs-string">"api_endpoint_here"</span>
+  -H <span class="hljs-string">"Authorization: meowmeowmeow"</span></code></pre>
+        <blockquote>
+          <p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+        </blockquote>
+        <p>Will be updated!</p>
+        <!-- Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://domain/developers). -->
+        <!-- Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following: -->
+        <p><code>Authorization: meowmeowmeow</code></p>
+        <aside class="notice"> You must replace <code>meowmeowmeow</code> with your personal API key. </aside>
+        <h1 id="products">Products</h1>
+        <h2 id="get-all-products">Get All Products</h2> <pre class="highlight bash"><code>curl <span class="hljs-string">"http://domain/api/products"</span>
+  <span class="hljs-comment"># -H "Authorization: meowmeowmeow"</span></code></pre>
+        <blockquote>
+          <p>The above command returns JSON structured like this:</p>
+        </blockquote> <pre class="highlight json"><code>{
+    <span class="hljs-attr">"jsonapi"</span>: {
+        <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.0"</span>
+    },
+    <span class="hljs-attr">"data"</span>: [
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">56</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"products"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"test"</span>,
+                <span class="hljs-attr">"min"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"max"</span>: <span class="hljs-number">10</span>,
+                <span class="hljs-attr">"barcode"</span>: <span class="hljs-string">"7777777"</span>,
+                <span class="hljs-attr">"price"</span>: <span class="hljs-string">"2.000"</span>,
+                <span class="hljs-attr">"description"</span>: <span class="hljs-string">"5"</span>,
+                <span class="hljs-attr">"panjang"</span>: <span class="hljs-string">"4.000"</span>,
+                <span class="hljs-attr">"lebar"</span>: <span class="hljs-string">"5.000"</span>,
+                <span class="hljs-attr">"tinggi"</span>: <span class="hljs-string">"6.000"</span>,
+                <span class="hljs-attr">"berat"</span>: <span class="hljs-string">"7.000"</span>,
+                <span class="hljs-attr">"conversion"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fk_categories"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fk_satuan"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fk_statuses"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fk_satuanJual"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fk_satuanBeli"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2018-01-21T00:00:00.000Z"</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2018-02-02T00:00:00.000Z"</span>
+            },
+            <span class="hljs-attr">"relationships"</span>: {
+                <span class="hljs-attr">"vendors"</span>: {
+                    <span class="hljs-attr">"data"</span>: [
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendors"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>
+                        }
+                    ]
+                },
+                <span class="hljs-attr">"vendor_items"</span>: {
+                    <span class="hljs-attr">"data"</span>: [
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendor_items"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">57</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"products"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Teh Pucuk 350ml"</span>,
+                <span class="hljs-attr">"min"</span>: <span class="hljs-number">123</span>,
+                <span class="hljs-attr">"max"</span>: <span class="hljs-number">7777</span>,
+                <span class="hljs-attr">"barcode"</span>: <span class="hljs-string">"7777777"</span>,
+                <span class="hljs-attr">"price"</span>: <span class="hljs-string">"2.000"</span>,
+                <span class="hljs-attr">"description"</span>: <span class="hljs-string">"5"</span>,
+                <span class="hljs-attr">"panjang"</span>: <span class="hljs-string">"4.000"</span>,
+                <span class="hljs-attr">"lebar"</span>: <span class="hljs-string">"5.000"</span>,
+                <span class="hljs-attr">"tinggi"</span>: <span class="hljs-string">"6.000"</span>,
+                <span class="hljs-attr">"berat"</span>: <span class="hljs-string">"7.000"</span>,
+                <span class="hljs-attr">"conversion"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fk_categories"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">"fk_satuan"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">"fk_statuses"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">"fk_satuanJual"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">"fk_satuanBeli"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2018-01-21T00:00:00.000Z"</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2018-02-03T13:52:24.000Z"</span>
+            },
+            <span class="hljs-attr">"relationships"</span>: {
+                <span class="hljs-attr">"vendors"</span>: {
+                    <span class="hljs-attr">"data"</span>: [
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendors"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>
+                        },
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendors"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>
+                        },
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendors"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>
+                        }
+                    ]
+                },
+                <span class="hljs-attr">"vendor_items"</span>: {
+                    <span class="hljs-attr">"data"</span>: [
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendor_items"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>
+                        },
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendor_items"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>
+                        },
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendor_items"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>
+                        }
+                    ]
+                },
+                <span class="hljs-attr">"categories"</span>: {
+                    <span class="hljs-attr">"data"</span>: [
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"categories"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>
+                        }
+                    ]
+                },
+                <span class="hljs-attr">"satuan"</span>: {
+                    <span class="hljs-attr">"data"</span>: [
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"satuan"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>
+                        }
+                    ]
+                },
+                <span class="hljs-attr">"statuses"</span>: {
+                    <span class="hljs-attr">"data"</span>: [
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"statuses"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>
+                        }
+                    ]
+                },
+                <span class="hljs-attr">"satuanJual"</span>: {
+                    <span class="hljs-attr">"data"</span>: [
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"satuanJual"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>
+                        }
+                    ]
+                },
+                <span class="hljs-attr">"satuanBeli"</span>: {
+                    <span class="hljs-attr">"data"</span>: [
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"satuanBeli"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>
+                        }
+                    ]
+                }
+            }
+        },
+    ],
+    <span class="hljs-attr">"included"</span>: [
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendor_items"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"fk_vendors"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"fk_products"</span>: <span class="hljs-number">56</span>,
+                <span class="hljs-attr">"tax"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"price"</span>: <span class="hljs-string">"77777.000"</span>,
+                <span class="hljs-attr">"level"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendor_items"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"fk_vendors"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"fk_products"</span>: <span class="hljs-number">57</span>,
+                <span class="hljs-attr">"tax"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"price"</span>: <span class="hljs-string">"10000.000"</span>,
+                <span class="hljs-attr">"level"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendor_items"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"fk_vendors"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">"fk_products"</span>: <span class="hljs-number">57</span>,
+                <span class="hljs-attr">"tax"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"price"</span>: <span class="hljs-string">"15000.500"</span>,
+                <span class="hljs-attr">"level"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendor_items"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"fk_vendors"</span>: <span class="hljs-number">3</span>,
+                <span class="hljs-attr">"fk_products"</span>: <span class="hljs-number">57</span>,
+                <span class="hljs-attr">"tax"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"price"</span>: <span class="hljs-string">"18000.000"</span>,
+                <span class="hljs-attr">"level"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendors"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Vendor Pertama"</span>,
+                <span class="hljs-attr">"address"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"telephone"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fax"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"email"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"website"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"salesPerson"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"attention"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"contactPerson"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"paymentTerms"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"status"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendors"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Edbert"</span>,
+                <span class="hljs-attr">"address"</span>: <span class="hljs-string">"Cibubur"</span>,
+                <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"1"</span>,
+                <span class="hljs-attr">"fax"</span>: <span class="hljs-string">"2"</span>,
+                <span class="hljs-attr">"email"</span>: <span class="hljs-string">"3"</span>,
+                <span class="hljs-attr">"website"</span>: <span class="hljs-string">"4"</span>,
+                <span class="hljs-attr">"salesPerson"</span>: <span class="hljs-number">5</span>,
+                <span class="hljs-attr">"attention"</span>: <span class="hljs-number">6</span>,
+                <span class="hljs-attr">"contactPerson"</span>: <span class="hljs-number">7</span>,
+                <span class="hljs-attr">"paymentTerms"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"status"</span>: <span class="hljs-number">8</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2018-01-22T00:00:00.000Z"</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2018-01-22T00:00:00.000Z"</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">3</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendors"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Test Ganti Nama"</span>,
+                <span class="hljs-attr">"address"</span>: <span class="hljs-string">"Depok"</span>,
+                <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"021"</span>,
+                <span class="hljs-attr">"fax"</span>: <span class="hljs-string">"021"</span>,
+                <span class="hljs-attr">"email"</span>: <span class="hljs-string">"kareem.lukitomo@gmail.com"</span>,
+                <span class="hljs-attr">"website"</span>: <span class="hljs-string">"google.com"</span>,
+                <span class="hljs-attr">"salesPerson"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"attention"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"contactPerson"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"paymentTerms"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2018-01-22T00:00:00.000Z"</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2018-01-22T00:00:00.000Z"</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"categories"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"minuman siap saji"</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"satuan"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"krat"</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"statuses"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"available"</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"satuanJual"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"gram"</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"satuanBeli"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"gram"</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">6</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendors"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"John Doe"</span>,
+                <span class="hljs-attr">"address"</span>: <span class="hljs-string">"Jakarta"</span>,
+                <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"120931023"</span>,
+                <span class="hljs-attr">"fax"</span>: <span class="hljs-string">"123123"</span>,
+                <span class="hljs-attr">"email"</span>: <span class="hljs-string">"jogn"</span>,
+                <span class="hljs-attr">"website"</span>: <span class="hljs-string">"doe"</span>,
+                <span class="hljs-attr">"salesPerson"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"attention"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"contactPerson"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"paymentTerms"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"status"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2018-01-25T00:00:00.000Z"</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2018-01-25T00:00:00.000Z"</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"categories"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"minuman mentah"</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"satuan"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"krat"</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"statuses"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"available"</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"satuanJual"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"gram"</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"satuanBeli"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"kilogram"</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        }
+    ]
+}</code></pre>
+        <p>This endpoint retrieves all products.</p>
+        <h3 id="http-request">HTTP Request</h3>
+        <p><code>GET http://domain/api/products</code></p>
+        <!-- ### Query Parameters -->
+        <!--  -->
+        <!-- Parameter | Default | Description -->
+        <!-- --------- | ------- | ----------- -->
+        <!-- include_cats | false | If set to true, the result will also include cats. -->
+        <!-- available | true | If set to false, the result will include kittens that have already been adopted. -->
+        <!-- <aside class="success"> -->
+        <!-- Remember — a happy kitten is an authenticated kitten! -->
+        <!-- </aside> -->
+        <h2 id="get-a-specific-product">Get a Specific Product</h2> <pre class="highlight bash"><code>curl <span class="hljs-string">"http://domain/api/products/:id"</span>
+  <span class="hljs-comment"># -H "Authorization: meowmeowmeow"</span></code></pre>
+        <blockquote>
+          <p>The above command returns JSON structured like this:</p>
+        </blockquote> <pre class="highlight json"><code>{
+    <span class="hljs-attr">"jsonapi"</span>: {
+        <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.0"</span>
+    },
+    <span class="hljs-attr">"data"</span>: [
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">56</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"products"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Teh Pucuk 600ml"</span>,
+                <span class="hljs-attr">"min"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"max"</span>: <span class="hljs-number">10</span>,
+                <span class="hljs-attr">"barcode"</span>: <span class="hljs-string">"7777777"</span>,
+                <span class="hljs-attr">"price"</span>: <span class="hljs-string">"2.000"</span>,
+                <span class="hljs-attr">"description"</span>: <span class="hljs-string">"5"</span>,
+                <span class="hljs-attr">"panjang"</span>: <span class="hljs-string">"4.000"</span>,
+                <span class="hljs-attr">"lebar"</span>: <span class="hljs-string">"5.000"</span>,
+                <span class="hljs-attr">"tinggi"</span>: <span class="hljs-string">"6.000"</span>,
+                <span class="hljs-attr">"berat"</span>: <span class="hljs-string">"7.000"</span>,
+                <span class="hljs-attr">"conversion"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fk_categories"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">"fk_satuan"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fk_statuses"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fk_satuanJual"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fk_satuanBeli"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2018-01-21T00:00:00.000Z"</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2018-02-02T00:00:00.000Z"</span>
+            },
+            <span class="hljs-attr">"relationships"</span>: {
+                <span class="hljs-attr">"vendors"</span>: {
+                    <span class="hljs-attr">"data"</span>: [
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendors"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>
+                        }
+                    ]
+                },
+                <span class="hljs-attr">"vendor_items"</span>: {
+                    <span class="hljs-attr">"data"</span>: [
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendor_items"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>
+                        }
+                    ]
+                },
+                <span class="hljs-attr">"categories"</span>: {
+                    <span class="hljs-attr">"data"</span>: [
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"categories"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    <span class="hljs-attr">"included"</span>: [
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendor_items"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"fk_vendors"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"fk_products"</span>: <span class="hljs-number">56</span>,
+                <span class="hljs-attr">"tax"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"price"</span>: <span class="hljs-string">"77777.000"</span>,
+                <span class="hljs-attr">"level"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendors"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Vendor Pertama"</span>,
+                <span class="hljs-attr">"address"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"telephone"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fax"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"email"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"website"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"salesPerson"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"attention"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"contactPerson"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"paymentTerms"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"status"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"categories"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"minuman siap saji"</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        }
+    ]
+}</code></pre>
+        <p>This endpoint retrieves a specific kitten.</p>
+        <!-- <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside> -->
+        <h3 id="http-request">HTTP Request</h3>
+        <p><code>GET http://domain/products/:id</code></p>
+        <h3 id="url-parameters">URL Parameters</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ID</td>
+              <td>The ID of the <code>products</code> to retrieve</td>
+            </tr>
+          </tbody>
+        </table>
+        <h1 id="vendors">Vendors</h1>
+        <h2 id="get-all-vendors">Get All Vendors</h2> <pre class="highlight bash"><code>curl <span class="hljs-string">"http://domain/api/vendors"</span>
+  <span class="hljs-comment"># -H "Authorization: meowmeowmeow"</span></code></pre>
+        <blockquote>
+          <p>The above command returns JSON structured like this:</p>
+        </blockquote> <pre class="highlight json"><code>{
+    <span class="hljs-attr">"jsonapi"</span>: {
+        <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.0"</span>
+    },
+    <span class="hljs-attr">"data"</span>: [
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendors"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Vendor Pertama"</span>,
+                <span class="hljs-attr">"address"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"telephone"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fax"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"email"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"website"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"salesPerson"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"attention"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"contactPerson"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"paymentTerms"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"status"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            },
+            <span class="hljs-attr">"relationships"</span>: {
+                <span class="hljs-attr">"products"</span>: {
+                    <span class="hljs-attr">"data"</span>: [
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"products"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">56</span>
+                        },
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"products"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">57</span>
+                        }
+                    ]
+                },
+                <span class="hljs-attr">"vendor_items"</span>: {
+                    <span class="hljs-attr">"data"</span>: [
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendor_items"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>
+                        },
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendor_items"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendors"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Edbert"</span>,
+                <span class="hljs-attr">"address"</span>: <span class="hljs-string">"Cibubur"</span>,
+                <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"1"</span>,
+                <span class="hljs-attr">"fax"</span>: <span class="hljs-string">"2"</span>,
+                <span class="hljs-attr">"email"</span>: <span class="hljs-string">"3"</span>,
+                <span class="hljs-attr">"website"</span>: <span class="hljs-string">"4"</span>,
+                <span class="hljs-attr">"salesPerson"</span>: <span class="hljs-number">5</span>,
+                <span class="hljs-attr">"attention"</span>: <span class="hljs-number">6</span>,
+                <span class="hljs-attr">"contactPerson"</span>: <span class="hljs-number">7</span>,
+                <span class="hljs-attr">"paymentTerms"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"status"</span>: <span class="hljs-number">8</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2018-01-22T00:00:00.000Z"</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2018-01-22T00:00:00.000Z"</span>
+            },
+            <span class="hljs-attr">"relationships"</span>: {
+                <span class="hljs-attr">"products"</span>: {
+                    <span class="hljs-attr">"data"</span>: [
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"products"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">57</span>
+                        }
+                    ]
+                },
+                <span class="hljs-attr">"vendor_items"</span>: {
+                    <span class="hljs-attr">"data"</span>: [
+                        {
+                            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendor_items"</span>,
+                            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>
+                        }
+                    ]
+                }
+            }
+        },
+    ],
+    <span class="hljs-attr">"included"</span>: [
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendor_items"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"fk_vendors"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"fk_products"</span>: <span class="hljs-number">57</span>,
+                <span class="hljs-attr">"tax"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"price"</span>: <span class="hljs-string">"10000.000"</span>,
+                <span class="hljs-attr">"level"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">4</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendor_items"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"fk_vendors"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"fk_products"</span>: <span class="hljs-number">56</span>,
+                <span class="hljs-attr">"tax"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"price"</span>: <span class="hljs-string">"77777.000"</span>,
+                <span class="hljs-attr">"level"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">56</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"products"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Teh Pucuk 600ml"</span>,
+                <span class="hljs-attr">"min"</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">"max"</span>: <span class="hljs-number">10</span>,
+                <span class="hljs-attr">"barcode"</span>: <span class="hljs-string">"7777777"</span>,
+                <span class="hljs-attr">"price"</span>: <span class="hljs-string">"2.000"</span>,
+                <span class="hljs-attr">"description"</span>: <span class="hljs-string">"5"</span>,
+                <span class="hljs-attr">"panjang"</span>: <span class="hljs-string">"4.000"</span>,
+                <span class="hljs-attr">"lebar"</span>: <span class="hljs-string">"5.000"</span>,
+                <span class="hljs-attr">"tinggi"</span>: <span class="hljs-string">"6.000"</span>,
+                <span class="hljs-attr">"berat"</span>: <span class="hljs-string">"7.000"</span>,
+                <span class="hljs-attr">"conversion"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fk_categories"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">"fk_satuan"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fk_statuses"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fk_satuanJual"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fk_satuanBeli"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2018-01-21T00:00:00.000Z"</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2018-02-02T00:00:00.000Z"</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">57</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"products"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"Teh Pucuk 350ml"</span>,
+                <span class="hljs-attr">"min"</span>: <span class="hljs-number">123</span>,
+                <span class="hljs-attr">"max"</span>: <span class="hljs-number">7777</span>,
+                <span class="hljs-attr">"barcode"</span>: <span class="hljs-string">"7777777"</span>,
+                <span class="hljs-attr">"price"</span>: <span class="hljs-string">"2.000"</span>,
+                <span class="hljs-attr">"description"</span>: <span class="hljs-string">"5"</span>,
+                <span class="hljs-attr">"panjang"</span>: <span class="hljs-string">"4.000"</span>,
+                <span class="hljs-attr">"lebar"</span>: <span class="hljs-string">"5.000"</span>,
+                <span class="hljs-attr">"tinggi"</span>: <span class="hljs-string">"6.000"</span>,
+                <span class="hljs-attr">"berat"</span>: <span class="hljs-string">"7.000"</span>,
+                <span class="hljs-attr">"conversion"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"fk_categories"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">"fk_satuan"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">"fk_statuses"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">"fk_satuanJual"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">"fk_satuanBeli"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-string">"2018-01-21T00:00:00.000Z"</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-string">"2018-02-03T13:52:24.000Z"</span>
+            }
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-number">2</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"vendor_items"</span>,
+            <span class="hljs-attr">"attributes"</span>: {
+                <span class="hljs-attr">"fk_vendors"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">"fk_products"</span>: <span class="hljs-number">57</span>,
+                <span class="hljs-attr">"tax"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"price"</span>: <span class="hljs-string">"15000.500"</span>,
+                <span class="hljs-attr">"level"</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">"createdAt"</span>: <span class="hljs-literal">null</span>,
+                <span class="hljs-attr">"updatedAt"</span>: <span class="hljs-literal">null</span>
+            }
+        },
+    ]
+}</code></pre>
+        <p>This endpoint retrieves all vendors.</p>
+        <h3 id="http-request">HTTP Request</h3>
+        <p><code>GET http://domain/api/vendors</code></p>
+        <!-- ### Query Parameters -->
+        <!--  -->
+        <!-- Parameter | Default | Description -->
+        <!-- --------- | ------- | ----------- -->
+        <!-- include_cats | false | If set to true, the result will also include cats. -->
+        <!-- available | true | If set to false, the result will include kittens that have already been adopted. -->
+        <!-- <aside class="success"> -->
+        <!-- Remember — a happy kitten is an authenticated kitten! -->
+        <!-- </aside> -->
+        <h1 id="errors">Errors</h1>
+        <!--  -->
+        <!-- <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside> -->
+        <p>The WMS API uses the following error codes:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Error Code</th>
+              <th>Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>400</td>
+              <td>Bad Request -- Your request sucks</td>
+            </tr>
+            <tr>
+              <td>401</td>
+              <td>Unauthorized -- Invalid authentication</td>
+            </tr>
+            <tr>
+              <td>404</td>
+              <td>Not Found -- The specified product could not be found</td>
+            </tr>
+            <tr>
+              <td>500</td>
+              <td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+            </tr>
+            <tr>
+              <td>503</td>
+              <td>Service Unavailable -- We&#39;re temporarially offline for maintanance. Please try again later.</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- 403 | Forbidden -- The kitten requested is hidden for administrators only -->
+        <!-- 405 | Method Not Allowed -- You tried to access a kitten with an invalid method -->
+        <!-- 406 | Not Acceptable -- You requested a format that isn't json -->
+        <!-- 410 | Gone -- The kitten requested has been removed from our servers -->
+        <!-- 418 | I'm a teapot -->
+        <!-- 429 | Too Many Requests -- You're requesting too many kittens! Slow down! -->
+      </div>
+      <div class="dark-box">
+        <div class="lang-selector">
+          <a href="#" data-language-name="bash">bash</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
