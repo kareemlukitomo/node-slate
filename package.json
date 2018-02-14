@@ -4,7 +4,7 @@
   "description": "Node port of tripit/slate",
   "main": "index.js",
   "scripts": {
-    "start": "rm -rf ./build && ./node_modules/gulp/bin/gulp && gulp serve",
+    "start": "gulp serve",
     "build": "gulp",
     "postinstall": "rm -f ./build && npm run build && npm run start",
     "deploy": "./deploy.sh"
